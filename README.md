@@ -31,6 +31,12 @@ python main.py --task vqmil --dataset camelyon16 \
     --feature_dir $PT_FILES \
     --pseudo_feature_dir $PSEUDO_PT_FILES
 ```
+or directly:
+
+```
+./vqmil_c16.sh
+```
+
 
 ### Training on TCGA Lung Cancer Dataset
 
@@ -38,7 +44,13 @@ Follow the guidelines in [DS-MIL](https://github.com/binli123/dsmil-wsi) to down
 
 For training, run
 ```
-python main.py --task vqmil --dataset camelyon16 \
+python main.py --task vqmil --dataset tcga2 \
     --feature_dir $PT_FILES \
     --pseudo_feature_dir $PSEUDO_PT_FILES
+```
+
+or directly
+
+```
+./vqmil_tcga2.sh
 ```
