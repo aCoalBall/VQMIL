@@ -9,7 +9,9 @@ conda activate vqmil
 pip3 install -r requirements.txt
 ```
 
-## Train on Camelyon16
+## Train
+
+### Training on Camelyon16
 
 After downloading [Camelyon16](https://camelyon16.grand-challenge.org/Data/) dataset, please refer to the guidelines in [CLAM](https://github.com/mahmoodlab/CLAM) to extract embedding vectors using the following command.
 
@@ -24,6 +26,17 @@ Sampling pesudo bags using this directory
 python main.py --task sampling --feature_dir $PT_FILES
 ```
 Training
+```
+python main.py --task vqmil --dataset camelyon16 \
+    --feature_dir $PT_FILES \
+    --pseudo_feature_dir $PSEUDO_PT_FILES
+```
+
+### Training on TCGA Lung Cancer Dataset
+
+Follow the guidelines in [DS-MIL](https://github.com/binli123/dsmil-wsi) to download the dataset. To extract embedding vectors and sample the pseudo bags, using the same way as for Camelyon16.
+
+For training, run
 ```
 python main.py --task vqmil --dataset camelyon16 \
     --feature_dir $PT_FILES \
