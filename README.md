@@ -1,4 +1,4 @@
-VQMIL
+SVQ-MIL: Small-Cohort Whole Slide Image Classification via Split Vector Quantization
 ======
 
 ## Installation and Dependencies
@@ -21,20 +21,11 @@ python create_patches_fp.py --source $YOUR_WSI_DIR --save_dir $TILES_DIR --patch
 python extract_features_fp.py --data_h5_dir $TILES_DIR --data_slide_dir $YOUR_WSI_DIR --csv_path $INFO_CSV --feat_dir $EMBEDDING_DIR --batch_size 512 --slide_ext .tif
 ```
 Then you can get a directory with .pt files of embedding vectors.
-Sampling pesudo bags using this directory
-```
-python main.py --task sampling --feature_dir $PT_FILES
-```
+
 Training
-```
-python main.py --task vqmil --dataset camelyon16 \
-    --feature_dir $PT_FILES \
-    --pseudo_feature_dir $PSEUDO_PT_FILES
-```
-or directly:
 
 ```
-./vqmil_c16.sh
+./s_vqmil.sh
 ```
 
 
@@ -44,31 +35,14 @@ Follow the guidelines in [DS-MIL](https://github.com/binli123/dsmil-wsi) to down
 
 For training, run
 ```
-python main.py --task vqmil --dataset tcga2 \
-    --feature_dir $PT_FILES \
-    --pseudo_feature_dir $PSEUDO_PT_FILES
-```
-
-or directly
-
-```
-./vqmil_tcga2.sh
+./s_vqmil_tcga.sh
 ```
 
 ##Ablation Study
 
-To run the ablation study for Camelyon16, run
+To run the ablation study, run
 
 ```
-./vqmil_c16_ablation.sh
-```
-To run the ablation study for TCGA Lung Cancer Dataset, run
-
-```
-./vqmil_tcga_ablation.sh
+./s_vqmil_ablation.sh
 ```
 
-To run the KMeans experiments, run
-```
-./kmeans.sh
-```
