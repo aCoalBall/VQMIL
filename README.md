@@ -54,3 +54,21 @@ or directly
 ```
 ./vqmil_tcga2.sh
 ```
+
+##Ablation Study
+
+To run the ablation study for Camelyon16, run
+
+```
+./vqmil_c16_ablation.sh
+```
+To run the ablation study for TCGA Lung Cancer Dataset, run
+
+```
+./vqmil_tcga_ablation.sh
+```
+
+To run the KMeans experiments, run
+```
+./kmeans.sh
+```
