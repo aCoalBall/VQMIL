@@ -38,7 +38,7 @@ For training, run
 ./s_vqmil_tcga.sh
 ```
 
-##Ablation Study
+### Ablation Study
 
 To run the ablation study, run
 
